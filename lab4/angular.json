@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "online-store": {
+    "angular-tutorial": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -57,10 +57,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "online-store:build:production"
+              "buildTarget": "angular-tutorial:build:production"
             },
             "development": {
-              "buildTarget": "online-store:build:development"
+              "buildTarget": "angular-tutorial:build:development"
             }
           },
           "defaultConfiguration": "development"
