@@ -1,0 +1,26 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 20px;
+  align-items: start;
+}
+
+.categories {
+  display: flex;
+  gap: 10px;
+  margin: 16px 20px;
+  flex-wrap: wrap;
+}
+
+.categories button {
+  background: #6c5ce7;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.categories button:hover {
+  background: #5a4bd6;
+}

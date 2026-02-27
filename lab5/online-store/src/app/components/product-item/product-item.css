@@ -1,0 +1,114 @@
+.card {
+  width: 280px;
+  padding: 14px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; 
+}
+
+.main-img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+  margin: 6px auto 10px;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.thumb {
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  transition: 0.2s;
+}
+
+.thumb:hover {
+  border-color: #6c5ce7;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 8px 0 4px;
+  text-align: center;
+}
+
+p {
+  margin: 4px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.price {
+  font-weight: 700;
+  color: #1e8e3e;
+}
+
+.rating {
+  color: #f39c12;
+}
+
+.likes {
+  font-weight: 700;
+  color: #e74c3c;
+}
+
+.action-buttons,
+.share-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  padding: 7px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+  color: #fff;
+}
+
+.action-buttons button:nth-child(1) {
+  background: #f8009d;
+}
+.action-buttons button:nth-child(1):hover {
+  background: #000000;
+}
+
+.action-buttons button:nth-child(2) {
+  background: #42494b;
+}
+.action-buttons button:nth-child(2):hover {
+  background: #111;
+}
+
+.share-buttons button {
+  background: #0984e3;
+}
+.share-buttons button:hover {
+  background: #0652dd;
+}
+
+a {
+  margin-top: 8px;
+  text-decoration: none;
+  color: #4b4bff;
+  font-weight: 600;
+}
