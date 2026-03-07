@@ -1,1 +1,28 @@
-<app-product-list></app-product-list>
+<h2>⭐ Favorites ({{ favorites.length }})</h2>
+
+@if (favorites.length === 0) {
+  <p>No favorite products yet</p>
+} @else {
+  <app-product-list
+    [products]="favorites"
+    (toggle)="toggleFavorite($event)">
+  </app-product-list>
+}
+
+<hr>
+
+<div class="categories">
+  <button (click)="setCategory('all')">All</button>
+  <button (click)="setCategory('smartphone')">Smartphones</button>
+  <button (click)="setCategory('laptop')">Laptops</button>
+  <button (click)="setCategory('headphones')">Headphones</button>
+  <button (click)="setCategory('tablet')">Tablets</button>
+</div>
+
+<h2>Products</h2>
+
+<app-product-list
+  [products]="filteredProducts"
+  (toggle)="toggleFavorite($event)"
+  (like)="likeProduct($event)">
+</app-product-list>

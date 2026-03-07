@@ -10,4 +10,6 @@ export interface Product {
   images: string[];
   link: string;
   liked?: boolean; 
+
+  isFavorite: boolean;
 }

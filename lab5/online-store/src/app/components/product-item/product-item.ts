@@ -12,8 +12,11 @@ import { Product } from '../../models/product.model';
 export class ProductItemComponent {
 
   @Input() product!: Product;
+
   @Output() delete = new EventEmitter<Product>();
   @Output() like = new EventEmitter<Product>();
+
+  @Output() toggle = new EventEmitter<number>();
 
   mainImage!: string;
 
@@ -31,6 +34,10 @@ export class ProductItemComponent {
 
   deleteProduct() {
     this.delete.emit(this.product);
+  }
+
+  onToggleFavorite() {
+    this.toggle.emit(this.product.id);
   }
 
   shareWhatsApp() {

@@ -1,15 +1,12 @@
-<div class="filters">
-  <button (click)="setCategory('all')">All</button>
-  <button (click)="setCategory('smartphone')">Smartphones</button>
-  <button (click)="setCategory('laptop')">Laptops</button>
-  <button (click)="setCategory('headphones')">Headphones</button>
-  <button (click)="setCategory('tablet')">Tablets</button>
-</div>
-
-<div class="grid">
-  <app-product-item *ngFor="let product of filteredProducts()"
-                    [product]="product"
-                    (delete)="deleteProduct($event)"
-                    (like)="likeProduct($event)">
-  </app-product-item>
+<div 
+  class="product-list"
+  [ngClass]="{'horizontal-list': horizontal}">
+  
+  @for (product of products; track product.id) {
+    <app-product-item
+      [product]="product"
+      (toggle)="onToggle($event)"
+      (like)="onLike($event)">
+    </app-product-item>
+  }
 </div>

@@ -1,14 +1,15 @@
-<div class="card">
-  <img class="main-img" [src]="mainImage" alt="{{ product.name }}" />
+<div class="product-card">
 
-  <div class="thumbnails">
-    <img
-      class="thumb"
-      *ngFor="let img of product.images"
-      [src]="img"
-      alt="{{ product.name }}"
-      (click)="setMainImage(img)"
-    />
+  <div class="image-wrapper">
+    <img [src]="mainImage">
+  </div>
+
+  <div class="thumbnail-container">
+    @for (img of product.images; track img) {
+      <img
+        [src]="img"
+        (click)="setMainImage(img)">
+    }
   </div>
 
   <h2>{{ product.name }}</h2>
@@ -16,16 +17,26 @@
 
   <p class="price">Price: {{ product.price | number }} ₸</p>
   <p class="likes">❤️ {{ product.likes || 0 }}</p>
-=
+
   <div class="action-buttons">
     <button (click)="likeProduct()">❤️ Like</button>
     <button (click)="deleteProduct()">🗑️ Delete</button>
   </div>
 
-  <a [href]="product.link" target="_blank">View on Kaspi</a>
+  <a [href]="product.link" target="_blank" class="kaspi-link">
+    View on Kaspi
+  </a>
 
   <div class="share-buttons">
     <button (click)="shareWhatsApp()">WhatsApp</button>
     <button (click)="shareTelegram()">Telegram</button>
   </div>
+
+  <button 
+    class="favorite-btn"
+    [ngClass]="product.isFavorite ? 'in-favorite' : 'not-favorite'"
+    (click)="onToggleFavorite()">
+    {{ product.isFavorite ? '⭐ In Favorites' : '⭐ Add to Favorites' }}
+  </button>
+
 </div>

@@ -24,3 +24,18 @@
 .categories button:hover {
   background: #5a4bd6;
 }
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.horizontal-list {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+app-product-item {
+  flex: 0 0 280px;
+}
