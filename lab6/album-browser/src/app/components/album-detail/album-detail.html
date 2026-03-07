@@ -1,0 +1,21 @@
+<section>
+  <p *ngIf="loading" class="loading">Loading album details...</p>
+
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+  <div *ngIf="album && !loading" class="detail-card">
+    <h2>Album Details</h2>
+
+    <p><strong>ID:</strong> {{ album.id }}</p>
+    <p><strong>User ID:</strong> {{ album.userId }}</p>
+
+    <label for="title"><strong>Title:</strong></label>
+    <input id="title" type="text" [(ngModel)]="editedTitle" />
+
+    <div class="actions">
+      <button (click)="saveAlbum()" class="save-btn">Save</button>
+      <a [routerLink]="['/albums', album.id, 'photos']" class="photos-btn">View Photos</a>
+      <button (click)="goBack()" class="back-btn">Back</button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,65 @@
+.albums-list {
+  display: grid;
+  gap: 16px;
+}
+
+.album-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background-color: #f9fafb;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+.album-info h3 {
+  margin: 0 0 8px;
+}
+
+.album-info p {
+  margin: 0;
+  color: #374151;
+}
+
+.album-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.details-btn,
+.delete-btn {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.details-btn {
+  background-color: #2563eb;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #dc2626;
+  color: white;
+}
+
+.loading,
+.error,
+.empty {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.error {
+  color: #dc2626;
+}
+
+.empty {
+  color: #6b7280;
+}

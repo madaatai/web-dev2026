@@ -1,0 +1,20 @@
+<section>
+  <h2>Album Photos</h2>
+
+  <p *ngIf="loading" class="loading">Loading photos...</p>
+
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+  <p *ngIf="!loading && photos.length === 0" class="empty">
+    No photos found.
+  </p>
+
+  <div *ngIf="!loading && photos.length > 0" class="photo-grid">
+    <div class="photo-card" *ngFor="let photo of photos">
+      <img [src]="photo.thumbnailUrl" [alt]="photo.title" />
+      <p>{{ photo.title }}</p>
+    </div>
+  </div>
+
+  <button (click)="goBack()" class="back-btn">Back</button>
+</section>

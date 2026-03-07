@@ -1,0 +1,32 @@
+.home {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f9fafb;
+  border-radius: 16px;
+}
+
+.home h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.home p {
+  font-size: 18px;
+  color: #4b5563;
+  max-width: 700px;
+  margin: 0 auto 24px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #1d4ed8;
+}

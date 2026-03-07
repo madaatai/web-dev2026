@@ -1,0 +1,50 @@
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.photo-card {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+
+.photo-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.photo-card p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #374151;
+  word-break: break-word;
+}
+
+.back-btn {
+  background-color: #6b7280;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.loading,
+.error,
+.empty {
+  font-size: 18px;
+}
+
+.error {
+  color: #dc2626;
+}
+
+.empty {
+  color: #6b7280;
+}

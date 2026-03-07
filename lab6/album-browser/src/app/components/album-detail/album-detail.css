@@ -1,0 +1,59 @@
+.detail-card {
+  background-color: #f9fafb;
+  padding: 24px;
+  border-radius: 16px;
+  max-width: 700px;
+}
+
+.detail-card h2 {
+  margin-top: 0;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.save-btn,
+.photos-btn,
+.back-btn {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+}
+
+.save-btn {
+  background-color: #16a34a;
+}
+
+.photos-btn {
+  background-color: #2563eb;
+}
+
+.back-btn {
+  background-color: #6b7280;
+}
+
+.loading,
+.error {
+  font-size: 18px;
+}
+
+.error {
+  color: #dc2626;
+}

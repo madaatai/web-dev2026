@@ -1,0 +1,10 @@
+.about {
+  background-color: #f9fafb;
+  padding: 30px;
+  border-radius: 16px;
+  line-height: 1.7;
+}
+
+.about h2 {
+  margin-top: 0;
+}
