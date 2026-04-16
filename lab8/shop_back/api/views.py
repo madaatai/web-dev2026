@@ -1,6 +1,7 @@
 from rest_framework import viewsets, filters
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from django_filters.rest_framework import DjangoFilterBackend
 
 from .models import Category, Product
 from .serializers import CategorySerializer, ProductSerializer
@@ -15,21 +16,31 @@ class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
-    # фильтры DRF
-    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    # filters
+    filter_backends = [
+        DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter
+    ]
 
+    #filter
+    filterset_fields = ['category', 'is_active']
+
+    # search
     search_fields = ['name']
+
+    # sort
     ordering_fields = ['name', 'price']
 
     def get_queryset(self):
         queryset = Product.objects.all()
 
-        # фильтр по category
+        # category filtr
         category = self.request.query_params.get('category')
         if category:
             queryset = queryset.filter(category_id=category)
 
-        # фильтр по is_active
+        # active filtr
         is_active = self.request.query_params.get('is_active')
         if is_active is not None:
             if is_active.lower() == 'true':
@@ -39,17 +50,17 @@ class ProductViewSet(viewsets.ModelViewSet):
 
         return queryset
 
-    # кастомный endpoint
+    # custom endpoint
     @action(detail=False)
     def active(self, request):
         queryset = Product.objects.filter(is_active=True)
 
-        # поиск
+        # search
         search = request.query_params.get('search')
         if search:
             queryset = queryset.filter(name__icontains=search)
 
-        # сортировка
+        # sorting
         ordering = request.query_params.get('ordering')
         if ordering:
             queryset = queryset.order_by(ordering)
